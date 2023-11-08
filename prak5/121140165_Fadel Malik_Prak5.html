@@ -1,0 +1,77 @@
+<!-- Pada praktikum minggu 5, praktikan belajar mengenai javascript dalam pemrograman web -->
+<!-- Fadel Malik - 121140165 - RB -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Pemweb Minggu 5</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- div ini sebagai container utama dengan nama kalkulator -->
+    <div class="kalkulator">
+        <div class="hasil">
+            <input placeholder="..." type="text" id="hasil" readonly>
+        </div>
+
+        <!-- bagian ini berguna untuk menampilkan tombol-tombol dari semua bagian kalkulator (mulai dari tombol angka 0-9, tombol operator aritmatika, tombol C, tombol =) -->
+        <div>
+            <input type="button" value="1" onclick="appendNumber('1')">
+            <input type="button" value="2" onclick="appendNumber('2')">
+            <input type="button" value="3" onclick="appendNumber('3')">
+            <input type="button" value="+" onclick="appendOperator('+')">
+        </div>
+
+        <div>
+            <input type="button" value="4" onclick="appendNumber('4')">
+            <input type="button" value="5" onclick="appendNumber('5')">
+            <input type="button" value="6" onclick="appendNumber('6')">
+            <input type="button" value="-" onclick="appendOperator('-')">
+        </div>
+
+        <div>
+            <input type="button" value="7" onclick="appendNumber('7')">
+            <input type="button" value="8" onclick="appendNumber('8')">
+            <input type="button" value="9" onclick="appendNumber('9')">
+            <input type="button" value="*" onclick="appendOperator('*')">
+        </div>
+
+        <div>
+            <input type="button" value="C" onclick="clearResult()">
+            <input type="button" value="O" onclick="appendNumber('0')">
+            <input type="button" value="=" onclick="calculateResult()">
+            <input type="button" value="/" onclick="appendOperator('/')">
+        </div>
+    </div>
+
+    <!-- Kode Javacript dimasukkan secara internal terhadap index.html karena tidak memerlukan banyak kode javascript untuk menjalankan proses komputasi yang dibutuhkan oleh website kalkulator ini -->
+    <script>
+        // fungsi ini berguna untuk memeriksa apabila tombol angka dipanggil oleh pengguna (sewaktu ditekan) terhadap kalkulator. Num berguna sebagai argument yang merepresentasikan angka yang ditekan. 
+        function appendNumber(num) {
+            document.getElementById('hasil').value += num;
+        }
+
+        // fungsi ini berguna untuk menambahkan operator aritmatik (+, -, *, dan /) terhadap kalkulator
+        function appendOperator(operator) {
+            document.getElementById('hasil').value += operator;
+        }
+
+        // fungsi ini berguna untuk melakukan clear terhadap kalkulator. Layaknya sewaktu kita menekan tombol C pada kalkulator biasanya. 
+        function clearResult(){
+            document.getElementById('hasil').value = '';
+        }
+
+        // fungsi ini berguna untuk melakukan evaluasi terhadap komputasi terhadap input yang diberi oleh pengguna. 
+        function calculateResult(){
+            let hasil = eval(document.getElementById('hasil').value);
+            document.getElementById('hasil').value = hasil;
+        }
+    </script>
+</body>
+</html>

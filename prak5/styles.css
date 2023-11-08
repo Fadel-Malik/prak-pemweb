@@ -1,0 +1,44 @@
+body {
+    font-family: Montserrat;
+    text-align: center;
+    background-image: linear-gradient(
+      130deg,
+      rgba(25, 0, 255, 0.8),
+      rgba(126, 31, 36, 0.7)
+    ),
+    url(wallpaperAsset.jpeg);
+}
+
+.kalkulator {
+    max-width: 300px;
+    margin: 50px auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hasil {
+    width: auto;
+    height: 50px;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 5px;
+}
+
+input[type="button"]{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #eee;
+}
+
+input[type="button"]:hover {
+    background-color: #ddd;
+}
